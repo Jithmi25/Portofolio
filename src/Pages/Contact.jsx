@@ -44,7 +44,7 @@ const ContactPage = () => {
 
     try {
       // Replace with your email at FormSubmit
-      const formSubmitUrl = 'https://formsubmit.co/ekizulfarrachman@gmail.com';
+      const formSubmitUrl = 'https://formsubmit.co/wickjitha@gmail.com';
       
       // Prepare form data for FormSubmit
       const submitData = new FormData();
