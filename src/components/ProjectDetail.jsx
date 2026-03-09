@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   ArrowLeft, ExternalLink, Github, Code2, Star,
-  ChevronRight, Layers, Layout, Globe, Package, Cpu, Code,
+  ChevronRight, Layers, Layout, Globe, Package, Cpu, Code, Users, User,
 } from "lucide-react";
 import Swal from 'sweetalert2';
 
@@ -72,6 +72,39 @@ const ProjectStats = ({ project }) => {
         <div className="flex-grow">
           <div className="text-lg md:text-xl font-semibold text-purple-200">{featuresCount}</div>
           <div className="text-[10px] md:text-xs text-gray-400">Key Features</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ContributionInfo = ({ contributionType, role }) => {
+  const isGroup = contributionType === 'group';
+  const Icon = isGroup ? Users : User;
+  const bgColor = isGroup ? 'from-purple-600/10 to-pink-600/10' : 'from-blue-600/10 to-cyan-600/10';
+  const borderColor = isGroup ? 'border-purple-500/20' : 'border-blue-500/20';
+  const iconColor = isGroup ? 'text-purple-300' : 'text-blue-300';
+  const iconBg = isGroup ? 'bg-purple-500/20' : 'bg-blue-500/20';
+
+  return (
+    <div className={`relative overflow-hidden px-4 md:px-6 py-3 md:py-4 bg-gradient-to-r ${bgColor} rounded-xl border ${borderColor} transition-all duration-300 hover:border-opacity-50`}>
+      <div className="flex items-start gap-3 md:gap-4">
+        <div className={`${iconBg} p-2 md:p-2.5 rounded-full shrink-0`}>
+          <Icon className={`${iconColor} w-4 h-4 md:w-5 md:h-5`} strokeWidth={1.5} />
+        </div>
+        <div className="flex-grow">
+          <div className="text-xs md:text-sm text-gray-400 mb-1">Contribution Type</div>
+          <div className="text-sm md:text-base font-semibold text-white/90 capitalize">
+            {contributionType || 'Individual'} Project
+          </div>
+          {isGroup && role && (
+            <div className="mt-2 pt-2 border-t border-white/10">
+              <div className="text-xs text-gray-400">Role</div>
+              <div className="text-sm md:text-base font-medium text-purple-200/90 mt-0.5">
+                {role}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -175,6 +208,12 @@ const ProjectDetails = () => {
               </div>
 
               <ProjectStats project={project} />
+
+              {/* Contribution Information */}
+              <ContributionInfo 
+                contributionType={project.contribution_type} 
+                role={project.role} 
+              />
 
               <div className="flex flex-wrap gap-3 md:gap-4">
                 {/* Action buttons */}
