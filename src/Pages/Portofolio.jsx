@@ -114,6 +114,12 @@ const techStacks = [
   { icon: "git.svg", language: "Git" },
   { icon: "docker.svg", language: "Docker" },
   { icon: "jest.svg", language: "Jest" },
+  { icon: "jira.svg", language: "Jira" },
+  { icon: "confluence.svg", language: "Confluence" },
+  { icon: "notion.svg", language: "Notion" },
+  { icon: "slack.svg", language: "Slack" },
+  { icon: "powerbi.svg", language: "Power BI" },
+  { icon: "clickup.svg", language: "ClickUp" },
 ];
 
 

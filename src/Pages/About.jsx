@@ -118,7 +118,7 @@ const AboutPage = () => {
     const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
     const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
     
-    const startDate = new Date("2021-11-06");
+    const startDate = new Date("2023-11-06");
     const today = new Date();
     const experience = today.getFullYear() - startDate.getFullYear() -
       (today < new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate()) ? 1 : 0);
@@ -214,7 +214,7 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-             A curious and collaborative Full-Stack Developer with a strong interest in backend development and system design. I am driven by a passion for building practical, end-to-end solutions and actively engage in tech communities through events and speaking opportunities. My core motivation is a relentless desire to learn, grow, and contribute to impactful projects. </p>
+             A Full-Stack Developer and Project Manager with a strong interest in backend development, system design, and scalable architectures. Experienced in managing development workflows while building end-to-end applications that solve real-world problems. A collaborative professional who actively participates in tech communities and continuously seeks opportunities to learn, innovate, and contribute to impactful technology projects.</p>
 
                {/* Quote Section */}
       <div 
