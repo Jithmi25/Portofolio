@@ -214,7 +214,8 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-             A Full-Stack Developer and Project Manager with a strong interest in backend development, system design, and scalable architectures. Experienced in managing development workflows while building end-to-end applications that solve real-world problems. A collaborative professional who actively participates in tech communities and continuously seeks opportunities to learn, innovate, and contribute to impactful technology projects.</p>
+            An aspiring Project Manager with a strong interest in project planning, team collaboration, and delivering successful technology solutions. Equipped with a technical foundation in software development and passionate about coordinating development workflows, improving processes, and driving projects toward successful outcomes. A collaborative individual who actively participates in tech communities and continuously seeks opportunities to learn, grow, and contribute to impactful technology projects.
+</p>
 
                {/* Quote Section */}
       <div 
