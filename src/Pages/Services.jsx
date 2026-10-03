@@ -99,14 +99,17 @@ const EventCard = ({
   thumbnail,
   platform,
 }) => {
-  const isCompleted = status === "completed";
-  const isComingSoon = status === "coming_soon";
+  const normalizedStatus = status?.trim().toLowerCase();
+  const normalizedYoutubeLink = youtubeLink?.trim();
+  const normalizedRegistrationLink = registrationLink?.trim();
+  const isCompleted = normalizedStatus === "completed";
+  const isComingSoon = normalizedStatus === "coming_soon";
   const dateLabel = `Date: ${eventDate || "Coming Soon"}`;
 
   const button =
-    isCompleted && youtubeLink ? (
+    isCompleted && normalizedYoutubeLink ? (
       <a
-        href={youtubeLink}
+        href={normalizedYoutubeLink}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 rounded-lg bg-red-600/90 px-4 py-2 text-sm font-medium text-white transition hover:bg-red-500"
@@ -114,9 +117,9 @@ const EventCard = ({
         <Video className="h-4 w-4" />
         Watch Recording
       </a>
-    ) : !isCompleted && registrationLink ? (
+    ) : !isCompleted && normalizedRegistrationLink ? (
       <a
-        href={registrationLink}
+        href={normalizedRegistrationLink}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 text-sm font-medium text-white transition hover:from-blue-400 hover:to-purple-400"
