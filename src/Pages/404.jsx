@@ -1,5 +1,6 @@
-import React from 'react';
-import { Home, ArrowLeft } from 'lucide-react';
+import React from "react";
+import { Home, ArrowLeft } from "lucide-react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function NotFoundPage() {
   const handleGoBack = () => {
@@ -8,7 +9,7 @@ export default function NotFoundPage() {
 
   const handleGoHome = () => {
     // In a real app, you would use your router's navigation
-    window.location.href = '/';
+    window.location.href = "/";
   };
 
   return (
@@ -28,14 +29,20 @@ export default function NotFoundPage() {
             Oops! Page Not Found
           </h2>
           <p className="text-lg text-gray-600 max-w-md mx-auto leading-relaxed">
-            The page you are looking for might have been moved, deleted, or never existed.
+            The page you are looking for might have been moved, deleted, or
+            never existed.
           </p>
         </div>
 
         {/* Illustration */}
         <div className="mb-8">
-          <div className="w-32 h-32 mx-auto bg-indigo-100 rounded-full flex items-center justify-center mb-6">
-            <div className="text-6xl">🔍</div>
+          <div className="w-64 h-48 sm:w-80 sm:h-56 mx-auto mb-6">
+            <DotLottieReact
+              src="https://lottie.host/d4d86b79-5663-40f6-a574-df2dbb5de7d4/5s1hLAVkch.lottie"
+              loop
+              autoplay
+              className="w-full h-full"
+            />
           </div>
         </div>
 
@@ -46,9 +53,9 @@ export default function NotFoundPage() {
             className="flex items-center gap-2 px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 shadow-md hover:shadow-lg"
           >
             <ArrowLeft size={20} />
-          Return
+            Return
           </button>
-          
+
           <button
             onClick={handleGoHome}
             className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 shadow-md hover:shadow-lg"
@@ -57,9 +64,6 @@ export default function NotFoundPage() {
             Home page
           </button>
         </div>
-
-       
-
       </div>
     </div>
   );
